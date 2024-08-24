@@ -1,0 +1,51 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std ;
+int main ( )
+{
+    string n ;
+    int readnumber ;
+    int chanceleft = 5 ;
+    int playerinput ;
+    int i ;
+    cout << " \t ======================================== " << endl ;
+    cout << " \t ========= NUMBER GUESSING GAME ========= " << endl ;
+    cout << " \t ======================================== " << endl ;
+    cout << " Enter your name : " ;
+    getline( cin , n ) ;
+    srand( time( 0 ) ) ;
+    readnumber = rand( ) %100 + 1 ;
+    cout << " You will have 5 chances to guess the number correctly. " << endl ;
+    for ( i = 1 ; i <= 5 ; i++ )
+    {
+        cout << endl << " Enter any random number : " ;
+        cin >> playerinput ;
+        if ( playerinput == readnumber )
+        {
+            cout << " Congrats! You guessed the correct number. " << endl ;
+            break ;
+        }
+        else
+        {
+            if ( playerinput > readnumber )
+            {
+                cout << " This number is larger, so please insert smaller number " << endl ;
+            }
+            else
+            {
+                cout << " This number is smaller, so please insert larger number " << endl ;
+            }
+        }
+        chanceleft-- ;
+        cout << " You have " << chanceleft << " chances remaining " << endl ;
+        if ( chanceleft == 0 )
+        {
+            cout << " Sorry! Your chances were finished. " << endl ;
+            cout << " The random number was " << readnumber << endl ;
+            cout << " Thanks for playing this game " << endl ;
+        }
+    }
+    cout << endl ;
+    return 0 ;
+}
