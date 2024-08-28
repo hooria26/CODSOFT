@@ -14,26 +14,28 @@ void display( const vector <string> & brd )
     cout << "  " << brd[7] << "  |  " << brd[8] << "  |  " << brd[9] << "  " << endl << endl ;
 }
 
-bool isValid ( int move, const vector<string>& brd) {
+bool isValid ( int move, const vector<string>& brd)
+{
     return (move > 0 && move < 10 && brd[move] != "X" && brd[move] != "O");
 }
 
-void makeMove(int move, const string& playerSymbol, vector<string>& brd) {
-    brd[move] = playerSymbol;
+void makeMove(int move, const string& player, vector<string>& brd)
+{
+        brd[move] = player;
 }
 
-string checkWin(const string& playerSymbol, const vector<string>& brd)
+string checkWin(const string& player, const vector<string>& brd)
 {
-    if ((brd[1] == playerSymbol && brd[2] == playerSymbol && brd[3] == playerSymbol) ||
-        (brd[4] == playerSymbol && brd[5] == playerSymbol && brd[6] == playerSymbol) ||
-        (brd[7] == playerSymbol && brd[8] == playerSymbol && brd[9] == playerSymbol) ||
-        (brd[1] == playerSymbol && brd[4] == playerSymbol && brd[7] == playerSymbol) ||
-        (brd[2] == playerSymbol && brd[5] == playerSymbol && brd[8] == playerSymbol) ||
-        (brd[3] == playerSymbol && brd[6] == playerSymbol && brd[9] == playerSymbol) ||
-        (brd[1] == playerSymbol && brd[5] == playerSymbol && brd[9] == playerSymbol) ||
-        (brd[3] == playerSymbol && brd[5] == playerSymbol && brd[7] == playerSymbol))
+    if ((brd[1] == player && brd[2] == player && brd[3] == player) ||
+        (brd[4] == player && brd[5] == player && brd[6] == player) ||
+        (brd[7] == player && brd[8] == player && brd[9] == player) ||
+        (brd[1] == player && brd[4] == player && brd[7] == player) ||
+        (brd[2] == player && brd[5] == player && brd[8] == player) ||
+        (brd[3] == player && brd[6] == player && brd[9] == player) ||
+        (brd[1] == player && brd[5] == player && brd[9] == player) ||
+        (brd[3] == player && brd[5] == player && brd[7] == player))
         {
-            return playerSymbol ;
+            return player ;
         }
     return "0" ;
 }
