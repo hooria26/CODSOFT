@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std ;
+
+int main ( )
+{
+    cout << "-------------------------------------" << endl ;
+    cout << "--------- Simple Calculator ---------" << endl ;
+    cout << "-------------------------------------" << endl ;
+
+    char cs;
+    int result ;
+    cout << " Press c for further calculations : " ;
+    cin >> cs ;
+    while ( cs == 'c' )
+    {
+        int first_no , second_no ;
+        cout << " Enter First Number for calculation : " ;
+        cin >> first_no ;
+        cout << " Enter Second Number for calculation : " ;
+        cin >> second_no ;
+        cout << endl ;
+
+        string operators;
+        cout << " Enter operator of the function you want to perform : " ;
+        cin >> operators ;
+
+        if ( operators == "+" )
+        {
+            result = first_no + second_no ;
+            cout << " Addition of first no. " << first_no << " and second no. " << second_no << " is : " << result ;
+            cout << endl ;
+        }
+        else if ( operators == "-" )
+        {
+            result = first_no - second_no ;
+            cout << " Subtraction of first no. " << first_no << " and second no. " << second_no << " is : " << result ;
+            cout << endl ;
+        }
+        else if ( operators == "*" )
+        {
+            result = first_no * second_no ;
+            cout << " Multiplication of first no. " << first_no << " and second no. " << second_no << " is : " << result ;
+            cout << endl ;
+        }
+        else if ( operators == "/" )
+        {
+            float(result ) = float(first_no)/float(second_no) ;
+            cout << "Division of first no. " << float( first_no ) <<" and second no. " << float(second_no) << " is : " << float(result ) ;
+            cout << endl ;
+        }
+        cout << endl << " Press c to calculate again or press q for quit : " ;
+        cin >> cs ;
+        cout << "-------------------------------------------------------------------" ;
+        cout << endl ;
+    }
+}
